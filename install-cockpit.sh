@@ -3,10 +3,8 @@
 sudo apt install \
 cockpit \
 cockpit-389-ds \
-cockpit-doc \
 cockpit-machines \
 cockpit-pcp \
-cockpit-tests \
 cockpit-storaged \
 -y
 ###############################################################
