@@ -1,28 +1,6 @@
 ####################### install cockpit ####################### 
 sudo apt update
 
-### install cockpit
-sudo apt install make python3 rsync zip curl -y
-sudo apt install -t focal-backports cockpit cockpit-machines cockpit-pcp cockpit-storaged zfsutils-linux nfs-common samba -y
-
-git clone https://github.com/optimans/cockpit-zfs-manager.git
-sudo cp -r cockpit-zfs-manager/zfs /usr/share/cockpit
-
-git clone https://github.com/cockpit-project/cockpit-podman
-cd cockpit-podman
-make
-cd
-
-git clone https://github.com/45Drives/cockpit-navigator.git
-cd cockpit-navigator
-make install
-cd
-
-git clone https://github.com/45Drives/cockpit-benchmark.git
-cd cockpit-benchmark
-make install
-cd
-
 ### install docker
 sudo apt install ca-certificates gnupg lsb-release -y
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
@@ -48,6 +26,7 @@ wget -nv https://download.opensuse.org/repositories/devel:kubic:libcontainers:st
 sudo apt update 
 sudo apt install podman -y
 
+
 ### install portainer
 docker volume create portainer_data
 docker run -d -p 8000:8000 -p 9191:9443 --name portainer \
@@ -63,3 +42,27 @@ php composer-setup.php
 php -r "unlink('composer-setup.php');"
 chmod +x composer.phar
 sudo mv composer.phar /usr/bin/composer
+
+### install cockpit
+sudo apt install make python3 rsync zip curl -y
+sudo apt install -t focal-backports cockpit cockpit-machines cockpit-pcp cockpit-storaged zfsutils-linux nfs-common samba -y
+
+git clone https://github.com/optimans/cockpit-zfs-manager.git
+sudo cp -r cockpit-zfs-manager/zfs /usr/share/cockpit
+
+git clone https://github.com/cockpit-project/cockpit-podman
+cd cockpit-podman
+sudo make
+cd
+
+git clone https://github.com/45Drives/cockpit-navigator.git
+cd cockpit-navigator
+sudo make install
+cd
+
+git clone https://github.com/45Drives/cockpit-benchmark.git
+cd cockpit-benchmark
+sudo make install
+cd
+
+
