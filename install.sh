@@ -3,7 +3,7 @@ sudo apt update
 
 ### install cockpit
 sudo apt install make python3 rsync zip curl -y
-sudo apt install -t focal-backports cockpit cockpit-machines cockpit-pcp cockpit-storaged -y
+sudo apt install -t focal-backports cockpit cockpit-machines cockpit-pcp cockpit-storaged zfsutils-linux nfs-common samba -y
 
 git clone https://github.com/optimans/cockpit-zfs-manager.git
 sudo cp -r cockpit-zfs-manager/zfs /usr/share/cockpit
