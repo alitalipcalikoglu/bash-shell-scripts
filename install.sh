@@ -53,6 +53,7 @@ sudo cp -r cockpit-zfs-manager/zfs /usr/share/cockpit
 git clone https://github.com/cockpit-project/cockpit-podman
 cd cockpit-podman
 sudo make
+sudo make install
 cd
 
 git clone https://github.com/45Drives/cockpit-navigator.git
@@ -64,5 +65,3 @@ git clone https://github.com/45Drives/cockpit-benchmark.git
 cd cockpit-benchmark
 sudo make install
 cd
-
-
