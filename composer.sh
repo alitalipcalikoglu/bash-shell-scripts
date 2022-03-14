@@ -1,5 +1,5 @@
 ################### install composer ############################
-sudo apt install php7.4 php7.4-mysql php-mbstring php-xml php-curl php-zip -y
+sudo apt install php7.4 php7.4-mysql php-mbstring php-xml php-curl php-zip curl -y
 curl -sS https://getcomposer.org/installer -o composer-setup.php
 sudo php composer-setup.php --version=1.10.17 --install-dir=/usr/local/bin --filename=composer
 php composer-setup.php
